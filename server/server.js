@@ -9,14 +9,18 @@ const path = require('path');
 const passport = require('passport');
 require('./config/passport')(passport);
 
-const usersRouter = require('./routes/users-router')
+// const usersRouter = require('./routes/users-router')
+const productRouter = require('./routes/product-router')
+const registersUsersRouter = require('./routes/registersUser-router')
 
 app.use(passport.initialize())
 app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/users',usersRouter)
+app.use('/users',registersUsersRouter)
+app.use('/products',productRouter)
+// app.use('/users',usersRouter)
 app.get("/", (req, res) => {
   res.send("success");
 });
