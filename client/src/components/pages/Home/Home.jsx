@@ -1,10 +1,34 @@
-import React from 'react'
-import LineChart from '../../features/LineChart/LineChart'
+import React from "react";
+import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
+import {
+  PieChart,
+  LineChart,
+  AreaChart,
+  BarChart,
+  DoughnutChart,
+} from "../../features/index";
 export default function Home() {
   return (
     <div>
-        <LineChart/>
-        <h1>nvisuvbsui</h1>
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol size="3">
+            <LineChart />
+          </MDBCol>
+          <MDBCol size="3">
+            <AreaChart />
+          </MDBCol>
+          <MDBCol size="3">
+            <BarChart />
+          </MDBCol>
+          <MDBCol size="3">
+            <DoughnutChart />
+          </MDBCol>
+          <MDBCol size="3">
+            <PieChart />
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
     </div>
-  )
+  );
 }
